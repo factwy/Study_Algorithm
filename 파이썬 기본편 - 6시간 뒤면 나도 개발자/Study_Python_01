@@ -1,0 +1,67 @@
+- 수 처리 함수
+abs(n) : n의 절댓값을 반환
+pow(n, m) : n의 m제곱을 반환
+max(n, m) : 최댓값을 반환
+min(n, m) : 최솟값을 반환
+round(n) : n의 값을 반올림하여 반환
+round(n, m) : n의 값을 소수 m번째 자리 까지 반올림하여 반환
+
+- 랜덤함수
+# (from random import *)
+random() : 0이상 1미만 임의의 값 반환
+randrange(n, m) : n이상 m미만 임의의 값 반환
+randint(n, m) : n이상 m이하 임의의 값 반환
+shuffle(list) : list값의 순서를 섞음
+sample(list, n) : list에서 무작위 n개를 뽑아서 반환
+
+- 문자열 처리 함수
+# 문자열 str
+str.lower() : str의 모든 문자를 소문자로 바꾸어 반환
+str.upper() : str의 모든 문자를 대문자로 바꾸어 반환
+str[n].isupper() : str의 n번째 문자가 대문자인지 참거짓 반환
+len(str) : str의 길이 반환
+str.replace(n, m) : str의 문자열 n 을 m으로 바꾸어 반환
+str.index(n) : str에서 n의 위치를 반환
+# 없을 경우 오류 발생
+str.inde(n, m) : str에서 m번째 문자 이후부터 나온 n의 위치를 반환
+str.find(n) : str에서 n의 위치를 반환
+# 없을 경우 -1 반환
+str.count(n) str에서 n이 나온 횟수 반환
+
+- 리스트 []
+list.index(n) : list에 n이 들어있는 위치 반환
+list.append(n) : list에 n을 추가
+list.insert(n, m) : list n번째에 m을 추가
+list.pop() : list에서 가장 뒤에 있는 값을 반환하며 리스트에서 제거함
+list.count(n) : list에 n이 몇 번 나오는지 반환
+list.sort() : 오름차순으로 정렬
+list.reverse() : list 순서를 뒤집어서 반환
+list.clear() : list 값을 모두 제거
+list.exten(list2) : list에 list2 값을 추가
+
+- 딕셔너리 {}
+# key : 중복 불가
+dic[key] : key에 해당하는 value 값을 반환
+# 값이 없을 경우 오류
+dic.get(key) : key에 해당하는 value값을 반환
+# 값이 없을 경우 None 반환
+dic.get(ket, n) : ket에 해당하는 value값을 반환
+# 값이 없을 경우 n 반환
+n in dic : dic에 n이 있는지 참거짓 반환
+dic[key] = value1 : key에 해당하는 value 값에 value1을 대입
+del dic[key] : key에 해당하는 값을 제거
+dic.keys() : key값들을 반환
+dic.values() : value값들을 반환
+dic.items() : key, value 값들을 반환
+dic.clear() : key, value 값들을 모두 제거
+
+- 집합(set)
+# 중복 x, 순서 x
+set1 & set2 : 교집합 값을 반환
+set1.intersection(set2) : 교집합 값을 반환
+set1 | set2 : 합집합 값을 반환
+set1.union(set2) : 합집합 값을 반환
+set1 – set2 : 차집합 값을 반환
+set1.difference(set2) : 차집합 값을 반환
+set.add(n) : set에 n 추가
+set.remove(n) : set에 n 제거
