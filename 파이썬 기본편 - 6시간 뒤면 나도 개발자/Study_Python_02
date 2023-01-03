@@ -1,0 +1,35 @@
+- 클래스
+# 생성자 : __init__(self, …)
+
+class Unit:
+  def __init__(self, name, hp, damage):
+    self.name = name
+    self.hp = hp
+    self.damage = damage
+
+- 상속
+# 부모클래스 : Unit, 자식클래스 : AttackUnit
+
+class AttackUnit(Unit):
+  def __init__(self, name, hp, damage):
+    Unit.__init__(self, name, hp)
+    self.damage = damage
+…
+
+- 다중상속 
+#부모클래스: AttackUnit, Flyable, 자식클래스 : FlyableAttackUnit
+
+class FlyableAttackUnit(AttackUnit, Flyable):
+  def __init__(self, name, hp, damage, flying_speed):
+    AttackUnit.__init__(self, name, hp, damage)
+    Flyable.__init__(self,flying_speed)
+
+- super
+# 다중상속의 경우에 사용하면 가장 먼저 상속받은 클래스를 의미함
+# 그러므로 다중상속의 경우 super 사용 X
+
+class AttackUnit(Unit):
+  def __init__(self):
+    super().__init__()
+
+# super().__init__() == Unit.__init__()
