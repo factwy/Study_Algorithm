@@ -1,0 +1,79 @@
+- 예외처리
+try:
+  …  # 이 문장이 실행되는 동안
+expect Error: # 에러가 발생한다면
+  …  # 이 문장이 실행된다.
+expect: # 위에서 제외한 에러가 아닌 다른 에러가 발생한다면
+  … # 이 문장이 실행된다.
+
+- 에러 발생시키기
+try:
+  …
+  raise Error # raise : 에러 발생
+except Error:
+  …
+
+- 에러 정의
+class MyError(Exception):
+  def __init__(self, msg):
+    self.msg = msg
+  def __str__(self):
+    return self.msg
+… 
+try:
+  … 
+  raise MyError(“에러가 갖는 메시지”)
+except MyError as err:
+  print(err)
+  … 
+
+# 사용자가 직접 에러를 선언할 수 있음
+
+- finally
+try: 
+  … # 이 문장이 실행하다가
+except Error: # 에러가 발생하면
+  …  # 이 문장을 실행한다
+finally: # 에러가 발생함과 무관하게 항상
+  …  # 이 문장을 실행한다
+
+- 모듈
+Main_Module.py → price, price_morning, price_solider 함수 정의
+# Main.py
+import Main_Module as module # Main_Module 을 module로 대신하여 사용
+module.price(5)  # 함수를 사용하기 위해서 module이 필요
+module.price_morning(7)
+module.price_solider(9) … 
+
+# 다른 사용방법
+from Main_Module import * # Main_Module 의 모든것(*) 을 사용
+price(5)  # 함수만 사용 가능
+price_morning(7)
+price_solider(9)
+
+- 패키지
+# 패키지는 모듈의 집합체
+# trip (패키지) – Thailand, Vietnam (클래스)
+# Main.py 
+import trip.Thailand # 클래스나 함수는 import  불가능
+			  # → trip.Thailand.ThailandPackage()와 같은 클래스 X
+trip_to = trip.Thailand.ThilandPackage()
+trip_to.detail()
+
+- __all__
+from trip import * → Error 발생
+# *는 항상 모든것을 의미해주지만 패키지에서는 범위를 지정해야함
+# 패키지 안에 __init__.py 를 생성하고
+# 그 파일안에 __all__ = [“범위를 지정하고 싶은 파일 이름”, “Thailand” … ]
+# 을 통해 범위를 지정할 수 있다.
+
+- 모듈 직접 실행
+if __name__ == “__main__”: # 모듈이 직접 실행될 때
+  … # 이 문장이 실행된다
+else: # 모듈이 외부에서 호출될 때
+  … # 이 문장이 실행된다
+
+- 패키지 / 모듈 위치
+import inspect
+
+inspect.getfile(module) # module의 위치를 반환
