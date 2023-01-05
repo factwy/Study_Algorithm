@@ -1,0 +1,54 @@
+실전에서 유용한 표준 라이브러리
+
+- 내장 함수 : 기본 입출력 함수부터 정렬 함수까지 기본적인 함수 제공
+- itertools : 반복되는 형태의 데이터를 처리하기 위한 유용한 기능들을 제공
+  # 순열과 조합 라이브러리는 코딩 테스트에서 자주 사용됨
+- heapq : 힙 자료구조를 제공
+  # 우선순위 큐 기능을 구현하기 위해 사용됨
+- bisect : 이진 탐색 기능 제공
+- collections : 덱, 카운터 등의 유용한 자료구조 포함
+- math : 필수적인 수학적 기능 제공
+  # 팩토리얼, 제곱근, 최대공약수, 삼각함수 관련 함수부터 파이와 같은 상수 포함
+
+# 내장함수
+  sum()
+  min(), max()
+  eval()
+  sorted()
+  # 내림차순으로 정렬이 필요할 경우 : sorted(list, reverse = True)
+  
+# itertools
+  # data = [‘A’, ‘B’, ‘C’] # 데이터 준비
+  - 순열
+  from itertools import permutations
+
+  result = list(permutations(data, 3)) # 모든 순열 구하기
+  # result : [(‘A’, ‘B’, ‘C’), (‘A’, ‘C’, ‘B’) … ]
+
+  - 조합
+  from itertools import combinations
+
+  result = list(combinations(data, 2)) # 2개를 뽑는 모든 조합 구하기
+  # result : [(‘A’, ‘B’), (‘A’, ‘C’), (‘B’, ‘C’)]
+
+  - 중복순열
+  from itertools import product
+
+  result = list(product(data, repeat = 2)) # 2개를 뽑는 모든 순열 구하기 (중복 허용)
+
+  - 중복조합
+  from itertools import combinations_with_replacement
+
+  result = list(combinations_with_replacement(data, 2))
+    # 2개를 뽑는 모든 조합 구하기 (중복 허용)
+
+# collections
+- Counter : 등장 횟수를 세는 기능
+from collections import Counter
+
+counter = Counter([‘red’, ‘blue’, ‘red’, ‘green’, ‘blue’, ‘blue’])
+#counter[‘blue’] : 3
+#dict(counter) : {‘red’ : 2, ‘blue’ : 3, ‘green’ : 1}
+
+# math
+- gcd() : 최대 공약수를 구하는 함수
