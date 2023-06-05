@@ -121,3 +121,28 @@ class Solution:
 ### A Level-order Traversal - Introduction
 - Level-order Traversal : traverse the tree level by level
 - Breadth-First Search starts with a root node and visit the node itself first. Then traverse its neighbors. traverse its second level neighbors, traverse its third level neighbors, so on and so forth
+
+```python
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]):
+        answer = []
+        
+        queue = deque()
+        queue.append((root, 0))
+        size = 0
+        
+        while queue:
+            node, layer = queue.popleft()
+            
+            if node:
+                if size == layer:
+                    answer.append([])
+                    size += 1
+                    
+                answer[layer].append(node.val)
+                    
+                queue.append((node.left, layer+1))
+                queue.append((node.right, layer+1))
+                
+        return answer
+```
