@@ -53,3 +53,120 @@ def maximum_depth(root):
 
 2. when we recommended to use "bottom-up"
 >  - can calculate the answer of that node when we know the answer of its children
+
+### A Implemention Maximum Depth of Binary Tree
+
+```python
+# top-down solution
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]):
+        answer = 0
+        
+        def top_down(node, depth):
+            nonlocal answer
+            if node:
+                top_down(node.left, depth+1)
+                top_down(node.right, depth+1)
+                answer = max(answer, depth)
+        
+        top_down(root, 1)
+        return answer
+```
+
+```python
+# bottom-up solution
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]):
+        def bottom_up(node):
+            if node:
+                left_depth = bottom_up(node.left)
+                right_depth = bottom_up(node.right)
+                return max(left_depth, right_depth) + 1
+            else:
+                return 0
+            
+        return bottom_up(root)
+```
+
+### A Implemention Symmetric Tree
+
+```python
+# top-down solution
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]):
+        answer = True
+        
+        def top_down(left_node, right_node):
+            nonlocal answer
+            
+            if left_node and right_node:
+                if left_node.val != right_node.val:
+                    answer = False
+                    
+                outside_left = left_node.left
+                outside_right = right_node.right
+
+                inside_right = right_node.left
+                inside_left = left_node.right
+
+                top_down(outside_left, outside_right)
+                top_down(inside_left, inside_right)
+            elif left_node:
+                answer = False
+            elif right_node:
+                answer = False
+            
+        top_down(root.left, root.right)
+        return answer
+```
+
+```python
+# bottom-up solution
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]):
+        
+        def bottom_up(left_node, right_node):
+            if left_node and right_node:
+                if left_node.left == left_node.right == right_node.left == right_node.right == None:
+                    if left_node.val == right_node.val:
+                        return True
+                    else:
+                        return False
+            elif left_node == None and right_node == None:
+                return True
+            else:
+                return False
+                
+            check1 = bottom_up(left_node.left, right_node.right)
+            check2 = bottom_up(left_node.right, right_node.left)
+            
+            if check1 & check2 & (left_node.val == right_node.val):
+                return True
+            else:
+                return False
+            
+        return bottom_up(root.left, root.right)
+```
+
+### A Implemention Path Sum
+
+```python
+# top-down solution
+class Solution:
+    def hasPathSum(self, root: Optional[TreeNode], targetSum: int):
+        answer = False
+        
+        def top_down(node, pathsum):
+            nonlocal answer 
+            
+            if node and node.left == None and node.right == None:
+                if pathsum + node.val == targetSum:
+                    answer = True
+            
+            if node:
+                top_down(node.left, pathsum + node.val)
+                top_down(node.right, pathsum + node.val)
+            
+        top_down(root, 0)
+        return answer
+```
