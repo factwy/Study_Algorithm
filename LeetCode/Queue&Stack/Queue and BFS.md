@@ -41,7 +41,7 @@ class Solution:
         return answer
 ```
 
-## A Open the Lock
+### A Open the Lock
 ```python
 class Solution:
     def openLock(self, deadends: List[str], target: str):
@@ -92,4 +92,36 @@ class Solution:
             answer = -1
             
         return answer
+```
+
+### A Perfect Squares
+```python
+class Solution:
+    def numSquares(self, n: int):
+        
+        def bfs(num):
+            queue = deque()
+            queue.append(num)
+            
+            time = [-1] * 10001
+            time[num] = 0
+            
+            while queue:
+                num = queue.popleft()
+                
+                for i in range(1, num+1):
+                    plus = i**2
+                    next_num = num - plus
+                    
+                    if next_num < 0:
+                        break
+                        
+                    if time[next_num] == -1 or time[num] + 1 < time[next_num]:
+                        time[next_num] = time[num] + 1
+                        queue.append(next_num)
+                        
+            return time[0]
+                        
+        return bfs(n)
+                        
 ```
