@@ -9,7 +9,7 @@
 - In-order Traversal is used in binary search tree
 - Post-order Traversal is uesd in deletion process or mathematical expressions
 
-### A Implemention Binary Tree preorder Traversal
+### P Implemention Binary Tree preorder Traversal
 - Pre-order Traversal : root > left > right
 ```python
 # Recursive solution
@@ -41,7 +41,7 @@ Optional[TreeNode]):
         return output
 ```
 
-### A Implemention Binary Tree Inorder Traversal
+### P Implemention Binary Tree Inorder Traversal
 - In-order Traversal : left > root > right
 ```python
 # Recursive solution
@@ -80,7 +80,7 @@ class Solution:
         return answer
 ```
 
-### A Implemention Binary Tree Postorder Traversal
+### P Implemention Binary Tree Postorder Traversal
 - Post-order Traversal : left > right > root
 
 ```python
@@ -118,7 +118,7 @@ class Solution:
         return answer
 ```
 
-### A Level-order Traversal - Introduction
+### P Level-order Traversal - Introduction
 - Level-order Traversal : traverse the tree level by level
 - Breadth-First Search starts with a root node and visit the node itself first. Then traverse its neighbors. traverse its second level neighbors, traverse its third level neighbors, so on and so forth
 
