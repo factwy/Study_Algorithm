@@ -15,7 +15,7 @@
 - need to implement queue : fixed-size array and two pointers to indicate the starting position and the ending position
 - goal : reuse the wasted storage
 
-## A Implement Circular Queue
+## P Implement Circular Queue
 - need to implement circular queue class
   1. MycircularQueue(k) : initializes the object with the size of the queue to be k
   2. Front() : gets the front item from the circular queue
