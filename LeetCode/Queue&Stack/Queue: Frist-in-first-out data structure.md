@@ -5,17 +5,17 @@
 - the new element is always added at the end of queue (enqueue)
 - remove the first element (dequeue)
 
-## B Queue - Implementation
+## A Queue - Implementation
 - need to implement queue : dynamic array and index pointing to the head of the queue
 - queue support two operations : enqueue, dequeue
 - implemented queue : straightforward and inefficient
 - drawback : with the movement of the start pointer, more and more space is wasted and it will be unacceptable when we only have a space limit
 
-## C Circular Queue
+## A Circular Queue
 - need to implement queue : fixed-size array and two pointers to indicate the starting position and the ending position
 - goal : reuse the wasted storage
 
-## D Implement Circular Queue
+## A Implement Circular Queue
 - need to implement circular queue class
   1. MycircularQueue(k) : initializes the object with the size of the queue to be k
   2. Front() : gets the front item from the circular queue
