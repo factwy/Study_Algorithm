@@ -1,6 +1,6 @@
 # Solve Problems Recursively
 
-### A Solve Problems Recursively
+## A Solve Problems Recursively
 a tree can be defined recursively as a node that includes a value and a list of references to children nodes
 
 #### "Top-down" Solution
@@ -54,7 +54,7 @@ def maximum_depth(root):
 2. when we recommended to use "bottom-up"
 >  - can calculate the answer of that node when we know the answer of its children
 
-### A Implemention Maximum Depth of Binary Tree
+## P Implemention Maximum Depth of Binary Tree
 
 ```python
 # top-down solution
@@ -88,7 +88,7 @@ class Solution:
         return bottom_up(root)
 ```
 
-### A Implemention Symmetric Tree
+## P Implemention Symmetric Tree
 
 ```python
 # top-down solution
@@ -148,7 +148,7 @@ class Solution:
         return bottom_up(root.left, root.right)
 ```
 
-### A Implemention Path Sum
+## P Implemention Path Sum
 
 ```python
 # top-down solution
