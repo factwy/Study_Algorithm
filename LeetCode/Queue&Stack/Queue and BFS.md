@@ -7,7 +7,7 @@ BFS find the shortest path, from a start node to a target node
 - It is worth noting that the newly-added nodes will not be traversed immedialtely but will be processed in the next round
 - The processing order of the nodes is the exact same order as how the were added to the queue
 
-### A Number of Islands
+### P Number of Islands
 ```python
 class Solution:
     def numIslands(self, grid: List[List[str]]):
@@ -41,7 +41,7 @@ class Solution:
         return answer
 ```
 
-### A Open the Lock
+### P Open the Lock
 ```python
 class Solution:
     def openLock(self, deadends: List[str], target: str):
@@ -94,7 +94,7 @@ class Solution:
         return answer
 ```
 
-### A Perfect Squares
+### P Perfect Squares
 ```python
 class Solution:
     def numSquares(self, n: int):
