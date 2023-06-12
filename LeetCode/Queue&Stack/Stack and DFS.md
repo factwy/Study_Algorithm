@@ -39,3 +39,25 @@ class Solution:
 ```python
 # brute-force algorithm : Time Limit Exceeded
 ```
+
+## P Binary_Tree_Inorder_Traversal.py
+- try to use dfs
+```python
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
+                
+        def dfs(node):
+            if node.left and node.right:
+                return dfs(node.left) + [node.val] + dfs(node.right)
+            elif node.left:
+                return dfs(node.left) + [node.val]
+            elif node.right:
+                return [node.val] + dfs(node.right)
+            else:
+                return [node.val]
+            
+        answer = dfs(root)
+        return answer
+```
