@@ -11,3 +11,12 @@ algorithm : brute force, DFS, BFS, and so on (or used data structure)<br>
 difficulty : Easy
 
 algorithm : DFS
+
+## if Daily challenge
+Daily challenge (2023. 06. 14)
+
+530. Minimum Absolute Difference in BST
+
+difficulty : Easy
+
+algorithm : DFS
