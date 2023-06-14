@@ -1,9 +1,14 @@
 # Binary Tree
 
-Each node of the tree will have root and child nodes
-Tree is defined as a directed acyclic graph which has N nodes and N-1 edges
-Binary Tree is a tree data structure in which each node has at most two children
+## Benefits
+- Understand the concept of a tree and a binary tree
+- Be familiar with different traversal methods
+- Use recursion to solve binary-tree-related problems
 
-1. Traverse A Tree
-2. Solve Problems Recursively
-3. Conclusion
+## Contents
+- Traverse A Tree
+- Solve Problems Recursively
+- Conclusion
+
+## Site
+- [Binary Tree](https://leetcode.com/explore/learn/card/data-structure-tree/)
