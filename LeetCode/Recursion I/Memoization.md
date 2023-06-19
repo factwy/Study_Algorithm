@@ -25,5 +25,22 @@ class Solution:
 
 ## P Climbing_Stairs.py
 ```python
-
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        stairs = [0] * (n+1)
+        stairs[0] = 1
+        
+        def recursion(self, n):
+            if n < 0:
+                return 0
+            if stairs[n]:
+                return stairs[n]
+            
+            stairs[n] = recursion(self, n-1) + recursion(self, n-2)
+            return stairs[n]
+            
+        
+        recursion(self, n)
+        
+        return stairs[-1]
 ```
