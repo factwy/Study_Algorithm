@@ -36,5 +36,26 @@ class Solution:
 
 ## P Pow(x, n).py
 ```python
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        
+        def tailrec(self, x, n):
+            def helper(self, base, x, n):
+                # base case
+                if n == 0:
+                    return 1.0
+                if n == 1:
+                    return base * x
 
+                # recurrence relation
+                if n < 0:
+                    return helper(self, base, 1/x, abs(n))
+                if n % 2 == 0:
+                    return helper(self, base, x**2, n//2)
+                else:
+                    return helper(self, base*x, x**2, n//2)
+            return helper(self, 1, x, n)
+        
+        return tailrec(self, x, n)
 ```
+[Reference](https://leetcode.com/problems/powx-n/editorial/)
