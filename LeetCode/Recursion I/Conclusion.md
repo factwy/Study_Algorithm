@@ -44,3 +44,33 @@ class Solution:
         
         return merge(self, list1, list2)
 ```
+
+## P K-th_Symbol_in_Grammar.py
+```python
+# 779. K-th Symbol in Grammar
+# difficulty : Medium
+# algorithm : recursion
+# Runtime : 50 ms (28.87%), Memory : 16.4 MB (27.17%)
+class Solution:
+    def kthGrammar(self, n: int, k: int) -> int:
+        # bottom-up
+        # guess output is 0 if is not, output is 1
+        # if n == 1 -> return num
+        # if k % 2 == 0 -> rec(n-1, 1-num, k//2)
+        # if k % 2 == 1 -> rec(n-1, num, (k+1)//2)
+        
+        
+        def rec(self, n, num, k):
+            # base case
+            if n == 1:
+                return num
+
+            # recurrence relation
+            if k % 2 == 0:
+                return rec(self, n-1, 1-num, k//2)
+            else:
+                return rec(self, n-1, num, (k+1)//2)
+            
+            
+        return rec(self, n, 0, k)
+```
