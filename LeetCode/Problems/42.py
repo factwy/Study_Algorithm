@@ -1,22 +1,28 @@
 # NeetCode - Two Pointers
 # 42. Trapping Rain Water
 # Difficulty : Hard
-# Algorithm : Dynamic Programming
-# Time complexity : O(N), Space complexity : O(N)
-# Runtime : 162 ms (16.47%), Memory : 18.64 MB (37.38%)
+# Algorithm : Two Pointers, Sliding Window
+# Time complexity : O(N), Space complexity : O(1)
+# Runtime : 136 ms (60.82%), Memory : 18.16 MB (93.64%)]
+
 class Solution:
     def trap(self, height: List[int]) -> int:
-        size = len(height)
-        left, right = [0] * size, [0] * size
-        left[0], right[size-1] = height[0], height[size-1]
-
-        for i in range(1, size):
-            left[i] = max(left[i-1], height[i])
-            right[size-1-i] = max(right[size-i], height[size-1-i])
-
         res = 0
-        for i, h in enumerate(height):
-            res += min(left[i], right[i]) - h
-        
+
+        start, end = 0, len(height)-1
+        max_left, max_right = height[start], height[end]
+
+        while start < end:
+            if height[start] < height[end]:
+                start += 1
+                max_left = max(max_left, height[start])
+                res += (max_left - height[start])
+            else:
+                end -= 1
+                max_right = max(max_right, height[end])
+                res += (max_right - height[end])
+
         return res
-# reference solution by "sreevardhan____"
+
+# reference "sreevardhan____" - Dynamic Programming
+# reference "NeetCode " - Two Pointers
