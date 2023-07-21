@@ -1,31 +1,33 @@
 # NeetCode - Sliding Window
 # 239. Sliding Window Maximum
 # Difficulty : Hard
-# Algorithm : Sliding Window
-# Time complexity : O(N), Space complexity : O(N)
-# Runtime : 2701 ms (5.03%), Memory : 41.36 MB (5.19%)
+# Algorithm : Sliding Window, Monotonic Queue
+# Time complexity : O(N), Space complexity : O(K)
+# Runtime : 1586 ms (97.35%), Memory : 33.18 MB (40.67%)
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        heap = []   # pair : -num, index
+        mono_queue = deque()    # index
         res = []
 
-        r = 0
-        for r in range(k-1):
-            heapq.heappush(heap, (-nums[r], r))
+        for i in range(k-1):
+            if mono_queue:
+                while mono_queue and nums[mono_queue[-1]] < nums[i]:
+                    mono_queue.pop()
+            mono_queue.append(i)
 
-        # Time complexity : O(N), Space complexity : O(N)
-        for r in range(k-1, len(nums)):
-            l = r - (k-1)
-            heapq.heappush(heap, (-nums[r], r))
 
-            num, i = heapq.heappop(heap)
-            while True:
-                if l <= i <= r:
-                    break
-                num, i = heapq.heappop(heap)
+        # Time complexity : O(N), Space complexity : O(K)
+        for i in range(k-1, len(nums)):
+            if mono_queue:
+                while mono_queue and nums[mono_queue[-1]] < nums[i]:
+                    mono_queue.pop()
+            mono_queue.append(i)
 
-            res.append(-num)
-            heapq.heappush(heap, (num, i))
+            res.append(nums[mono_queue[0]])
+            
+            while mono_queue and mono_queue[0] <= i - (k-1):
+                mono_queue.popleft()
 
         return res
-# need to use less time
+# Heap            - (Runtime : 2701 ms, Memory : 41.4 MB)
+# Monotonic Queue - (Runtime : 1586 ms, Memory : 33.18 MB)
