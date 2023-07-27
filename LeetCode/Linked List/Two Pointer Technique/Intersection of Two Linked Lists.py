@@ -1,6 +1,6 @@
 # 160. Intersection of Two Linked Lists
 # Easy
-# Time complexity : O(N), Space complexity : O(1)
+# Time complexity : O(N+M), Space complexity : O(1)
 # Runtime : 131 ms (100%), 31.6 mb (70.11%)
 
 # Definition for singly-linked list.
