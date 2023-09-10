@@ -1,4 +1,4 @@
-# NeetCode - Linked List
+# NeetCode - Tree
 # 235. Lowest Common Ancestor of a Binary Search Tree
 # Difficulty : Medium
 # Algorithm : Linked List
