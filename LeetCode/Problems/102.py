@@ -1,4 +1,4 @@
-# NeetCode - Linked List
+# NeetCode - Tree
 # 102. Binary Tree Level Order Traversal
 # Difficulty : Medium
 # Algorithm : Linked List
